@@ -1,5 +1,6 @@
 # Fiji-FuncTra
-Function Library for Fiji-STLTYX and Fiji-* repositories
+
+An imglib2 and java based Function Library.
 
 This repository contains a collections of functions that are written in imglib2 that are regularly used in Bio-Image analysis. 
 
