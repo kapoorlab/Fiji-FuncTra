@@ -4,8 +4,8 @@ public class LinearChirpPolyAmp implements ChirpFitFunction {
 
 	public double val(double t, double[] a, int totaltime, int timeindex, int degree) {
 
-		double Sinusoid = polyfunc(t, a, degree) * Math.cos(Math.toRadians(a[degree + 1] * t + (a[degree + 2] - a[degree + 1])* t * t / (2 * totaltime) 
-				+ a[degree + 3])) + a[degree + 4];
+		double Sinusoid = polyfunc(t, a, degree) * Math.cos(a[degree + 1] * t + (a[degree + 2] - a[degree + 1])* t * t / (2 * totaltime) 
+				+ a[degree + 3]) + a[degree + 4];
 		return Sinusoid;
 	}
 	
@@ -40,16 +40,16 @@ public class LinearChirpPolyAmp implements ChirpFitFunction {
 		if (k <= degree) {
 
 		
-			double Sinusoid = derivpolyfunc(t, a, k) * Math.cos(Math.toRadians(a[degree + 1] * t
-					+ (a[degree + 2] - a[degree + 1]) * t * t / (2* totaltime)  + a[degree + 3]));
+			double Sinusoid = derivpolyfunc(t, a, k) * Math.cos(a[degree + 1] * t
+					+ (a[degree + 2] - a[degree + 1]) * t * t / (2* totaltime)  + a[degree + 3]);
 			return Sinusoid;
 
 		}
 
 		else if (k == degree + 1) {
 
-			double Sinusoid = -poly * Math.sin(Math.toRadians(a[degree + 1] * t
-					+ (a[degree + 2] - a[degree + 1]) * t * t / (2 * totaltime)  + a[degree + 3])) * ( t -  t * t / (2 * totaltime) );
+			double Sinusoid = -poly * Math.sin(a[degree + 1] * t
+					+ (a[degree + 2] - a[degree + 1]) * t * t / (2 * totaltime)  + a[degree + 3]) * ( t -  t * t / (2 * totaltime) );
 
 			return Sinusoid;
 
@@ -57,8 +57,8 @@ public class LinearChirpPolyAmp implements ChirpFitFunction {
 
 		else if (k == degree + 2) {
 
-			double Sinusoid = -poly * Math.sin(Math.toRadians(a[degree + 1] * t
-					+ (a[degree + 2] - a[degree + 1]) * t * t / (2 * totaltime)  + a[degree + 3])) * t * t
+			double Sinusoid = -poly * Math.sin(a[degree + 1] * t
+					+ (a[degree + 2] - a[degree + 1]) * t * t / (2 * totaltime)  + a[degree + 3]) * t * t
 					/ (2 * totaltime) ;
 
 			return Sinusoid;
@@ -69,8 +69,8 @@ public class LinearChirpPolyAmp implements ChirpFitFunction {
 
 		else if (k == degree + 3) {
 
-			double Sinusoid = -poly * Math.sin(Math.toRadians(a[degree + 1] * t
-					+ (a[degree + 2] - a[degree + 1]) * t * t / (2 * totaltime) + a[degree + 3])) ;
+			double Sinusoid = -poly * Math.sin(a[degree + 1] * t
+					+ (a[degree + 2] - a[degree + 1]) * t * t / (2 * totaltime) + a[degree + 3]) ;
 
 			return Sinusoid;
 
