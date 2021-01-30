@@ -1,14 +1,16 @@
 package chirpModels;
 
+import chirpModels.UserChirpModel.UserModel;
+
 public class UserChirpModel {
 
 	
 	
 	public static enum UserModel{
 		
-		 LinearPolyAmp;
+		 Linear, LinearPolyAmp;
 		
 	}
-
+	protected static UserModel Linear;
 	protected static UserModel LinearPolyAmp;
 }
